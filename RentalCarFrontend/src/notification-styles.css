@@ -1,0 +1,29 @@
+.notification-styles {
+
+    background-color: #fff;
+
+    border: 2px solid #f0ad4e;
+
+    color: #f0ad4e;
+
+    font-weight: bold;
+
+  }
+
+ 
+
+  .notification-styles .toast-title {
+
+    font-weight: bold;
+
+  }
+
+ 
+
+  .notification-styles .toast-message {
+
+    font-weight: bold;
+
+  }
+
+ 

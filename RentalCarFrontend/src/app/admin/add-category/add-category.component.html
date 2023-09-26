@@ -1,0 +1,11 @@
+<div class="add-category-container">
+    <h2>Add Category</h2>
+    <form class="add-category-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="categoryName">Category Name:</label>
+        <input type="text" id="categoryName" name="categoryName" [(ngModel)]="categoryName" class="form-control">
+      </div>
+      <div class="error-message" *ngIf="error">{{ error }}</div>
+      <button type="submit" class="btn btn-primary">Add Category</button>
+    </form>
+  </div>

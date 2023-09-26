@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="left-panel">
+      <img src={{product?.imageURL}} alt="Image" style="width: 60%; height: 80%;" />
+    </div>
+    <div class="right-panel">
+      <div class="card">
+     
+        <h2>Details</h2>
+        <div class="col-md-6 product-details">
+            <h2>Car Name: {{ product?.maker }}</h2>
+            <p>Car Maker: {{ product?.model }}</p>
+            <p>Price per day: {{ product?.rentalPrice}}</p>
+            <p>Car Availability: {{ (product?.availabilityStatus)===true?"Yes":"NO"}}</p> 
+   
+  
+
+  <form [formGroup]="dateRangeForm">
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          
+          <mat-form-field>
+            <input formControlName="startDate" matInput [matDatepicker]="startDatePicker" [min]="todayDate" [max]="dateRangeForm.controls['endDate'].value" [matDatepickerFilter]="myHolidayFilter" placeholder="Choose start date">
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker ></mat-datepicker>
+          </mat-form-field>
+          <!-- <input type="date" id="startDate" min="2023-09-24" [(ngModel)]="startDate" /> -->
+        </div>
+        
+        <div class="form-group">
+          <label for="endDate">End Date:</label>
+          <mat-form-field>
+            <input formControlName="endDate" matInput [matDatepicker]="endDatePicker" [min]="dateRangeForm.controls['startDate'].value" [matDatepickerFilter]="myHolidayFilter" placeholder="Choose end date">
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker ></mat-datepicker>
+          </mat-form-field>
+  
+          <!-- Display a validation message -->
+          <div *ngIf="dateRangeForm.hasError('overlapping')">
+            <mat-error>Date range overlaps with predefined Booking. Please adjust your dates.</mat-error>
+          </div>
+          <!-- <input type="date" id="endDate" [(ngModel)]="endDate" /> -->
+        </div>
+        <button class="btn btn-primary" (click)="calculateTotalPrice()">Calculate Total Price</button>
+        <h1>Total Days: {{ totalDays}} days</h1>
+        <div *ngIf="totalDays !== 0">
+        <h1 style="background-color:lightgreen;">{{this.checkA===true?"Car Is Available":"Car is Not Available"}}</h1>
+      </div>
+        <button class="btn btn-warning" (click)="ConfirmBooking()">Confirm Agreement</button>
+        <!-- Display other details here -->
+  </form>
+      </div>
+    </div>
+  </div>
+  

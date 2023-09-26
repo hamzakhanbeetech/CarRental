@@ -1,0 +1,43 @@
+<div class="row mt-4">
+    <div class="col-12 text-center">
+      <h1>My Booking</h1>
+    </div>
+  </div>
+  
+  <div class="container">
+  
+    
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th (click)="sortColumnClicked('name')">Booking Id <i class="fa fa-sort" [ngClass]="getSortIcon('name')"></i>
+          </th>
+          <th>Car Model</th>
+          <th (click)="sortColumnClicked('price')">Price per day <i class="fa fa-sort" [ngClass]="getSortIcon('price')"></i></th>
+          <th>Avaialibity Status</th>
+          <th>Image</th>
+          <th>Booking Complete</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of filteredProducts">
+          <td>{{ prod.rentalAgreementId}}</td>
+          <td>{{ prod.model }}</td>
+          <td>{{ prod.totalCost | currency:'INR' }}</td>
+          <td>{{ prod.availabilityStatus===true?"YES":"NO"}}</td>
+        
+          <td><img [src]="prod.imageURL" [alt]="prod.name" width="100"></td>
+          <td *ngIf="prod.bookingApprove===true"><button class="btn btn-success">Completed</button></td>
+          <td *ngIf="prod.bookingApprove===false"><button class="btn btn-danger" (click)="UpdatingBooking(prod)">Request For Return</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="row justify-content-center">
+      <pagination-controls (pageChange)="goToPage($event)" [maxSize]="5" [directionLinks]="true" [responsive]="true">
+      </pagination-controls>
+    </div>
+  
+  </div>
+  

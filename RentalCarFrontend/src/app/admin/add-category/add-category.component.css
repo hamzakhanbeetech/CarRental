@@ -1,0 +1,40 @@
+.add-category-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: aliceblue;
+  }
+  
+  .add-category-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .add-category-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .add-category-form label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .add-category-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .add-category-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+  }
+  

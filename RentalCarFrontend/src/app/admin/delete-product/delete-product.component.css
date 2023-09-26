@@ -1,0 +1,37 @@
+.delete-product-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .delete-product-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .delete-product-container p {
+    margin-bottom: 20px;
+  }
+  
+  .product-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .product-info {
+    margin-left: 20px;
+  }
+  
+  .action-buttons button {
+    margin-right: 10px;
+  }
+  

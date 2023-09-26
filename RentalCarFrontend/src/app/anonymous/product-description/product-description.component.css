@@ -1,0 +1,35 @@
+.product-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-details h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .reviews h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .no-reviews p {
+    font-size: 16px;
+    color: #888;
+  }
+  

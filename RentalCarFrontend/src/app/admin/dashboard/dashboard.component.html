@@ -1,0 +1,106 @@
+<div class="container">
+
+  <nav class="navbar navbar-expand navbar-light" style="background-color: powderblue; margin-bottom: 1rem;">
+    <h3 class="navbar-text text-center w-100" style="font-size: 40px;">Car Rental App</h3>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <span class="navbar-text" style="font-size: 18px;">Welcome, {{ adminName }}</span>
+      </li>
+      
+      <li class="nav-item">
+        <button class="btn btn-primary mr-2" style="font-size: 16px;" (click)="addProduct()">Add Product</button>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn btn-warning mr-2" style="font-size: 16px;" (click)="ReturnRequest()">Return Request</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-danger" style="font-size: 16px;" (click)="signOut()">Sign Out</button>
+      </li>
+    </ul>
+  </nav>
+    <div class="row">
+      <div class="col-md-3">
+        <!-- <div class="card">
+          <div class="card-header bg-powderblue text-black">
+            Categories
+          </div>
+          <div class="card-body">
+            <select class="form-control" id="categoryFilter" [(ngModel)]="selectedCategory" (change)="applyFilter()">
+              <option value="All Categories">All Categories</option>
+              <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+            </select>
+          </div>
+        </div> -->
+      </div>
+      <!-- <div class="col-md-9"> -->
+        <div class="card">
+          <div class="card-header bg-powderblue text-black">
+            Products
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="searchProduct" [(ngModel)]="filterargs.maker" (input)="applyFilter()" placeholder="Search...">
+              </div>
+            </div>
+            <table class="table mt-3">
+              <thead>
+                <tr>
+                  <th (click)="sortColumnClicked('name')" class="clickable">Maker Name
+                    <span class="sort-icon" *ngIf="sortColumn === 'name'">
+                      <i [ngClass]="{'fa fa-sort-asc': sortDirection === 'asc', 'fa fa-sort-desc': sortDirection === 'desc'}"></i>
+                    </span>
+                  </th>
+                  <th class="clickable">Model</th>
+                  <th (click)="sortColumnClicked('price')" class="clickable">Rental Price
+                    <span class="sort-icon" *ngIf="sortColumn === 'price'">
+                      <i [ngClass]="{'fa fa-sort-asc': sortDirection === 'asc', 'fa fa-sort-desc': sortDirection === 'desc'}"></i>
+                    </span>
+                  </th>
+                  <th>Image</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of filteredProducts | myfilter:filterargs">
+                  <td>{{ product.maker }}</td>
+                  <td>{{ product.model }}</td>
+                  <td>{{ product.rentalPrice}}</td>
+                  <td>
+                    <img src="{{ product.imageURL }}" alt="Product Image" height="50" width="50">
+                  </td>
+                  <td>
+                    <button (click)="editProduct(product.carId)" class="btn btn-primary ">Edit</button>
+                    <button (click)="deleteProduct(product.carId)" class="btn btn-warning">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-end">
+                <!-- Previous page button -->
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                  <a class="page-link" (click)="goToPage(currentPage - 1)">Previous</a>
+                </li>
+                <!-- Page numbers -->
+                <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page">
+                  <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+                </li>
+                <!-- Next page button -->
+                <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+                  <a class="page-link" (click)="goToPage(currentPage + 1)">Next</a>
+                </li>
+                <!-- Last page button -->
+                <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+                  <a class="page-link" (click)="goToPage(totalPages.length)">Last</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>

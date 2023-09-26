@@ -1,0 +1,35 @@
+.cart-container {
+    margin-top: 2rem;
+  }
+  
+  .cart-header {
+    text-align: center;
+  }
+  
+  .cart-table {
+    margin-top: 2rem;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-button {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .remove-button {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .checkbox-input {
+    margin-left: 0.5rem;
+  }
+  
+  .place-order-button {
+    margin-top: 2rem;
+  }
+  

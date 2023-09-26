@@ -1,0 +1,19 @@
+<div class="delete-product-container" *ngIf="productDetails">
+  <h2>Delete Product</h2>
+  <p>Are you sure you want to delete the following product?</p>
+  <div class="product-details">
+    <div class="product-image">
+      <img [src]="productDetails.imageURL" alt="Product Image">
+    </div>
+    <div class="product-info">
+      <p><strong>Product Name:</strong> {{ productDetails.maker }}</p>
+      <p><strong>Rental Price:</strong> {{ productDetails.model }}</p>
+      
+      
+    </div>
+  </div>
+  <div class="action-buttons">
+    <button (click)="deleteProduct()" class="btn btn-danger">Delete</button>
+    <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+  </div>
+</div>

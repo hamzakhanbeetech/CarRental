@@ -1,0 +1,40 @@
+<div class="edit-product-container">
+  <h2>Edit Product</h2>
+  <form class="edit-product-form" (submit)="updateProduct()" *ngIf="product">
+    <label>
+      <span>Product Name:</span>
+      <input type="text" [(ngModel)]="product.maker" name="name" required class="form-control">
+    </label>
+    <label>
+      <span>Description:</span>
+      <textarea [(ngModel)]="product.model" name="description" required class="form-control"></textarea>
+    </label>
+    <label>
+      <span>Price:</span>
+      <input type="number" [(ngModel)]="product.rentalPrice" name="price" required class="form-control">
+    </label>
+    <label>
+      <span>Image URL:</span>
+      <input type="text" [(ngModel)]="product.imageURL" name="imageUrl" class="form-control">
+    </label>
+    
+    <label>
+      <span>Availability Status:</span>
+      <select [(ngModel)]="availabilityS" name="availabilityStatus" class="form-control">
+        <option value=true>Yes</option>
+        <option value=false>No</option>
+      </select>
+    </label>
+    
+    <!-- <label>
+      <span>Discount:</span>
+      <input type="number" [(ngModel)]="product.discount" name="discount" class="form-control">
+    </label> -->
+    <label>
+      <span>Available Quantity:</span>
+      <input type="number" [value]="product.availabilityStatus" [(ngModel)]="product.availabilityStatus" name="availableQuantity" class="form-control">
+
+    </label>
+    <button type="submit" class="btn btn-primary">Update Product</button>
+  </form>
+</div>

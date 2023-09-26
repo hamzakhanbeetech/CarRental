@@ -1,0 +1,56 @@
+.product-details {
+    margin-top: 4rem;
+  }
+  
+  .product-header {
+    text-align: center;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .product-image {
+    width: 200px;
+    height: auto;
+  }
+  
+  .product-name {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .product-description {
+    margin-top: 1rem;
+  }
+  
+  .product-price,
+  .product-discount {
+    margin-top: 0.5rem;
+  }
+  
+  .button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .review-container {
+    margin-top: 2rem;
+  }
+  
+  .review-box {
+    margin-bottom: 1rem;
+  }
+  
+  .no-reviews {
+    margin-top: 1rem;
+  }
+  
+  .create-review-button {
+    margin-top: 2rem;
+  }
+  

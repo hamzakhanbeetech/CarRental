@@ -1,0 +1,97 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <h2 class="text-center">Sign-Up</h2>
+  </div>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="mt-4">
+
+    <div class="form-group">
+
+      <label for="FullName">Full Name</label>
+
+      <input type="text" id="FullName" class="form-control" formControlName="FullName" required>
+
+      <div *ngIf="signupForm.get('FullName')?.errors?.['required'] && (signupForm.get('FullName')?.dirty || signupForm.get('FullName')?.touched)">
+        <div class="text-danger">Full Name is required</div>
+      </div>
+
+      <div *ngIf="signupForm.get('FullName')?.errors?.['maxlength']" class="text-danger">Full Name must not exceed 50 characters</div>
+
+      <div *ngIf="signupForm.get('FullName')?.errors?.['pattern']" class="text-danger">Full Name must contain only alphabets</div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="Email">Email</label>
+
+      <input type="email" id="Email" class="form-control" formControlName="Email" required>
+
+      <div *ngIf="signupForm.get('Email')?.errors?.['required'] && (signupForm.get('Email')?.dirty || signupForm.get('Email')?.touched)">
+        <div class="text-danger">Email is required</div>
+      </div>
+
+      <div *ngIf="signupForm.get('Email')?.errors?.['email']" class="text-danger">Invalid email format</div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="PhoneNumber">Phone Number</label>
+
+      <input type="tel" id="PhoneNumber" class="form-control" formControlName="PhoneNumber" required>
+
+      <div *ngIf="signupForm.get('PhoneNumber')?.errors?.['required'] && (signupForm.get('PhoneNumber')?.dirty || signupForm.get('PhoneNumber')?.touched)">
+        <div class="text-danger">Phone Number is required</div>
+      </div>
+
+      <div *ngIf="signupForm.get('PhoneNumber')?.errors?.['pattern']" class="text-danger">Invalid phone number format</div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="Password">Password</label>
+
+      <input type="password" id="Password" class="form-control" formControlName="Password" required>
+
+      <div *ngIf="signupForm.get('Password')?.errors?.['required'] && (signupForm.get('Password')?.dirty || signupForm.get('Password')?.touched)">
+        <div class="text-danger">Password is required</div>
+      </div>
+
+      <div *ngIf="signupForm.get('Password')?.errors?.['minlength']" class="text-danger">Password must be at least 8 characters long</div>
+
+      <div *ngIf="signupForm.get('Password')?.errors?.['pattern']" class="text-danger">Password must contain at least 1 special character, 1 number, and 1 alphabet</div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="ConfirmPassword">Confirm Password</label>
+
+      <input type="password" id="ConfirmPassword" class="form-control" formControlName="ConfirmPassword" required>
+
+      <div *ngIf="signupForm.get('ConfirmPassword')?.errors?.['required'] && (signupForm.get('ConfirmPassword')?.dirty || signupForm.get('ConfirmPassword')?.touched)">
+        <div class="text-danger">Confirm Password is required</div>
+      </div>
+
+      <div *ngIf="signupForm.get('ConfirmPassword')?.value !== signupForm.get('Password')?.value && signupForm.get('ConfirmPassword')?.dirty">
+        <div class="text-danger">Passwords do not match</div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="IsAdmin">Is Admin</label>
+
+      <input type="checkbox" id="IsAdmin" formControlName="IsAdmin">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+
+  </form>
+
+</div>

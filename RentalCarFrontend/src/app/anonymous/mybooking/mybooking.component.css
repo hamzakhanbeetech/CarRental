@@ -1,0 +1,43 @@
+.row.mt-4 {
+    background-color: powderblue;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .col-12.text-center h1 {
+    margin-bottom: 0;
+  }
+.container {
+    padding: 20px;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+  
+  .table thead th {
+    cursor: pointer;
+  }
+  
+  .table thead th i {
+    margin-left: 5px;
+  }
+  
+  .row.justify-content-center {
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+
+  .form-control{
+    margin-bottom: 10px;
+  }
+  

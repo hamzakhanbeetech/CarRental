@@ -1,0 +1,30 @@
+<h2>My Orders</h2>
+
+<table class="table order-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Car Name</th>
+      <th>Number of days</th>
+      <th>Date of Order</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let order of orders">
+      <tr *ngFor="let orderProduct of order.orderProducts">
+        <td>
+          <div class="product-box">
+            <img [src]="orderProduct.product?.imageUrl" alt="Product Image" />
+          </div>
+        </td>
+        <td>{{ orderProduct.product?.name }}</td>
+        <td>{{ orderProduct.quantity }}</td>
+        <td>{{ order.orderDate }}</td>
+        <td><button *ngIf="!isReturned" (click) = "returnCar()" class="btn btn-primary add-to-cart-button">Return</button></td>
+        <td><button *ngIf="isReturned" class="btn btn-primary add-to-cart-button">Marked for Return</button></td>
+      </tr>
+    </ng-container>
+
+  </tbody>
+</table>
